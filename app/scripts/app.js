@@ -2,6 +2,7 @@
 
 angular.module('pdApp', [
     'ngRoute',
+    'ui.bootstrap',
     'corrupt.loadingSpinnerWidget'
   ])
   .config(function ($routeProvider) {
@@ -18,6 +19,11 @@ angular.module('pdApp', [
       .when('/about-us', {
         templateUrl: 'views/about_us.html',
         title: 'О нас'
+      })
+      .when('/products', {
+        controller: 'LoruProductsCtrl',
+        templateUrl: 'views/loru/products.html',
+        title: 'Продукты'
       })
       .otherwise({
         templateUrl: 'views/404.html',

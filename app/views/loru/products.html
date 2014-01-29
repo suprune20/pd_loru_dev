@@ -1,0 +1,49 @@
+<table border="1">
+  <tr>
+    <td></td>
+    <td ng-repeat="place in places">{{place.name}} - {{place.cost}}</td>
+  </tr>
+  <tr ng-repeat="product in products">
+    <td>{{product.name}}</td>
+    <td ng-repeat="place in places">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" ng-model="a.changes[product.id][place.id]" btn-radio="'disable'">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        <button type="button" class="btn btn-default" ng-model="a.changes[product.id][place.id]" btn-radio="'enable'">
+          <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button type="button" class="btn btn-default" ng-model="a.changes[product.id][place.id]" btn-radio="'up'">
+          <span class="glyphicon glyphicon-arrow-up"></span>
+        </button>
+      </div>
+    </td>
+  </tr>
+</table>
+
+    {{ total }}
+
+<form name="myForm">
+
+  <div class="btn-group">
+    <label class="btn btn-default">
+      <input type="radio" ng-model="color" value="red">  Red <br/>
+      <span class="glyphicon glyphicon-remove"></span>
+    </label>
+    <label class="btn btn-default">
+      <input type="radio" ng-model="color" value="green"> Green <br/>
+      <span class="glyphicon glyphicon-ok"></span>
+    </label>
+    <label class="btn btn-default">
+      <input type="radio" ng-model="color" value="blue"> Blue <br/>
+      <span class="glyphicon glyphicon-arrow-up"></span>
+    </label>
+  </div>
+
+  <input type="radio" ng-model="color" value="red">  Red <br/>
+  <input type="radio" ng-model="color" value="green"> Green <br/>
+  <input type="radio" ng-model="color" value="blue"> Blue <br/>
+  <tt>color = {{color}}</tt><br/>
+</form>
+
+        {{a.changes}}
